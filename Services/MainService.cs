@@ -41,6 +41,13 @@ public class MainService : IMainService
                 string movieTitle = Console.ReadLine();
                 // check for duplicate title
                 List<string> LowerCaseMovieTitles = _fileService.MovieTitles.ConvertAll(t => t.ToLower());
+
+                // The below code is equivalent to the lambda expression (ConvertAll) above
+                //foreach (var mTitle in _fileService.MovieTitles)
+                //{
+                //    LowerCaseMovieTitles.Add(mTitle.ToLower());
+                //}
+
                 if (LowerCaseMovieTitles.Contains(movieTitle.ToLower()))
                 {
                     Console.WriteLine("That movie has already been entered");
