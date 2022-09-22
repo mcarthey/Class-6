@@ -1,4 +1,7 @@
-﻿namespace Class_6.Services;
+﻿using Class_6.Models;
+using System.Collections.Generic;
+
+namespace Class_6.Services;
 
 /// <summary>
 ///     This service interface only exists an example.
@@ -6,7 +9,11 @@
 /// </summary>
 public interface IFileService
 {
+    List<int> MovieIds { get; set; }
+    List<string> MovieTitles { get; set; }
+    List<string> MovieGenres { get; set; }
+
     void Read();
-    void Write(int movieId, string movieTitle, string genresString);
+    void Write(Movie movie);
     void Display();
 }
